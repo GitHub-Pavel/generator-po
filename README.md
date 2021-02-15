@@ -1,5 +1,5 @@
 # generator-po [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> Pacific Ocean webapck template
+> Pacific Ocean webpack template
 
 ## Installation
 

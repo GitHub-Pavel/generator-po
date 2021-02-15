@@ -1,7 +1,7 @@
 {
   "name": "generator-po",
-  "version": "0.0.1",
-  "description": "Pacific Ocean webapck template",
+  "version": "0.0.3",
+  "description": "Pacific Ocean webpack template",
   "homepage": "",
   "author": {
     "name": "Pavel",
