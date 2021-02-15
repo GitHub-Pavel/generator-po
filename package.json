@@ -1,6 +1,6 @@
 {
   "name": "generator-po",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Pacific Ocean webapck template",
   "homepage": "",
   "author": {
@@ -75,6 +75,5 @@
     "pretest": "eslint .",
     "test": "jest"
   },
-  "repository": "GitHub-Pavel/generator-po",
-  "private": true
+  "repository": "GitHub-Pavel/generator-po"
 }
