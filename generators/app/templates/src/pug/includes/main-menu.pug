@@ -1,0 +1,11 @@
+- var page = 'Home'
+
+mixin menuItem(title, url)
+  li
+    a(href=url, class=(page == title ? 'current-page' : ''))= title
+
+nav.main-menu
+  ul
+    +menuItem('Home', 'index.html')
+    +menuItem('Page', 'page.html')
+// main-menu 

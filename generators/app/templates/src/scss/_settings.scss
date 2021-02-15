@@ -1,0 +1,126 @@
+/*
+ * ==================================================================================
+ * reset
+ * ==================================================================================
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+ * ==================================================================================
+ * html
+ * ==================================================================================
+ */
+
+html {
+    font-size: 10px;
+}
+
+/*
+ * ==================================================================================
+ * body
+ * ==================================================================================
+ */
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+/*
+ * ==================================================================================
+ * standart
+ * ==================================================================================
+ */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.b-lazy {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.wrapper {
+    max-width: $maxWidth + px;
+    min-width: 320px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+input,
+button {
+    outline: none;
+    border: none;
+}
+
+button {
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+/*
+ * ==================================================================================
+ * grid
+ * ==================================================================================
+ */
+
+.container {
+    max-width: $widthContainer + 30px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -(var(--column-gap) / 2) + px;
+    margin-right: -(var(--column-gap) / 2) + px;
+}
+
+/*
+ * ==================================================================================
+ * link
+ * ==================================================================================
+ */
+
+a {
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    line-height: inherit;
+    text-decoration: underline;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+/*
+ * ==================================================================================
+ * visually-hidden
+ * ==================================================================================
+ */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}

@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Pavel",
+      "authorEmail": "pavel.khatkevich2000@gmail.com",
+      "authorUrl": ""
+    }
+  }
+}
