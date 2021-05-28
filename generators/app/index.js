@@ -206,7 +206,8 @@ module.exports = class extends Generator {
       'url-loader',
       'webpack',
       'webpack-cli',
-      'webpack-dev-server'
+      'webpack-dev-server',
+      'html-webpack-insert-at-body-end'
     ], {
       'save-dev': true
     })

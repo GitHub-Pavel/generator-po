@@ -11,7 +11,7 @@ const fs = require('fs')
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 
-const filename = ext => isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`
+const filename = ext => `[name].${ext}`;
 
 const cb = () => {
 
@@ -28,14 +28,19 @@ const length = mass => {
 }
 
 const addPage = (page) => {
-  return new HTMLWebpackPlugin({
-    template: path.resolve(__dirname, paths.src + `/pug/pages/${page}.pug`),
-    filename: path.resolve(__dirname, paths.dist + `/${page}.html`),
-    inject: page !== 'layout.map',
-    minify: {
-      collapseWhitespace: isProd
-    }
-  })
+  return [
+    new HTMLWebpackPlugin({
+      template: path.resolve(__dirname, paths.src + `/pug/pages/${page}.pug`),
+      filename: path.resolve(__dirname, paths.dist + `/${page}.html`),
+      inject: page !== 'layout.map',
+      minify: {
+        collapseWhitespace: false,
+        removeComments: true,
+      },
+      cache: true,
+    }),
+    new HtmlWebpackInsertAtBodyEndPlugin({filename: page+'.html', scriptSrc: 'scripts/patch.js'})
+  ]
 }
 
 const plugins = () => {
@@ -78,7 +83,7 @@ const plugins = () => {
     }
 
     pagesArray.pages.push(newFile)
-    basePlugins.push(addPage(newFile))
+    basePlugins.push(...addPage(newFile))
   })
 
   fs.appendFile(pagesConfinUrl, JSON.stringify(pagesArray), cb)
