@@ -28,19 +28,16 @@ const length = mass => {
 }
 
 const addPage = (page) => {
-  return [
-    new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, paths.src + `/pug/pages/${page}.pug`),
-      filename: path.resolve(__dirname, paths.dist + `/${page}.html`),
-      inject: page !== 'layout.map',
-      minify: {
-        collapseWhitespace: false,
-        removeComments: true,
-      },
-      cache: true,
-    }),
-    new HtmlWebpackInsertAtBodyEndPlugin({filename: page+'.html', scriptSrc: 'scripts/patch.js'})
-  ]
+  return new HTMLWebpackPlugin({
+    template: path.resolve(__dirname, paths.src + `/pug/pages/${page}.pug`),
+    filename: path.resolve(__dirname, paths.dist + `/${page}.html`),
+    inject: page !== 'layout.map',
+    minify: {
+      collapseWhitespace: false,
+      removeComments: true,
+    },
+    cache: true,
+  })
 }
 
 const plugins = () => {
@@ -83,7 +80,7 @@ const plugins = () => {
     }
 
     pagesArray.pages.push(newFile)
-    basePlugins.push(...addPage(newFile))
+    basePlugins.push(addPage(newFile))
   })
 
   fs.appendFile(pagesConfinUrl, JSON.stringify(pagesArray), cb)
